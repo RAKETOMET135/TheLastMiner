@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Miner</title>
+    <link rel="icon" href="Images/PixelArt/MalachitePickaxe.png" type="image/x-icon">
+    <link rel="stylesheet" href="menu_style.css">
+</head>
+<body>
+    <img id="background-image" src="Images/PixelArt/MenuBackground.png" alt="">
+
+    <h1 id="game-title">The Last Miner</h1>
+    <button id="play-button" class="button">Play</button>
+    <button id="reset-data-button" class="button">Reset data</button>
+
+    <p id="early-access">Early access - version 1</p>
+
+    <div id="reset-data-frame">
+        <p>Are you sure you want to delete all saved data?</p>
+        <button id="confirm-button" class="frame-button">Yes</button>
+        <button id="cancel-button" class="frame-button">No</button>
+    </div>
+
+    <script>
+        const playButton = document.querySelector("#play-button")
+        const resetDataButton = document.querySelector("#reset-data-button")
+
+        const resetDataFrame = document.querySelector("#reset-data-frame")
+        const resetDataConfirmButton = document.querySelector("#confirm-button")
+        const resetDataCancelButton = document.querySelector("#cancel-button")
+
+        function changeMainButtonsVisiblity(visibility){
+            playButton.style.visibility = visibility
+            resetDataButton.style.visibility = visibility
+        }
+
+        function changeResetDataFrameVisibility(visibility){
+            resetDataFrame.style.visibility = visibility
+        }
+
+        function play(){
+            window.location.href = "game.html"
+        }
+
+        function resetData(){
+            window.localStorage.removeItem("miner_world")
+            window.localStorage.removeItem("miner_plr")
+
+            changeMainButtonsVisiblity("visible")
+            changeResetDataFrameVisibility("hidden")
+        }
+
+        function setup(){
+            changeMainButtonsVisiblity("visible")
+            changeResetDataFrameVisibility("hidden")
+
+            playButton.addEventListener("click", play)
+            resetDataConfirmButton.addEventListener("click", resetData)
+
+            resetDataButton.addEventListener("click", () => {
+                changeMainButtonsVisiblity("hidden")
+                changeResetDataFrameVisibility("visible")
+            })
+            resetDataCancelButton.addEventListener("click", () => {
+                changeMainButtonsVisiblity("visible")
+                changeResetDataFrameVisibility("hidden")
+            })
+        }
+
+        setup()
+    </script>
+</body>
+</html>

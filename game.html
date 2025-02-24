@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>The Last Miner</title>
+    <link rel="icon" href="Images/PixelArt/MalachitePickaxe.png" type="image/x-icon">
+</head>
+<body>
+    <div id="game-holder">
+        <img id="sky" src="Images/PixelArt/Sky.png" alt="">
+    
+        <div id="blocks"></div>
+        <div id="light-mask"></div>
+    
+        <div id="minecart">
+            <div id="cart-ores"></div>
+            <img src="Images/PixelArt/Minecart.png" style="z-index: 66;" alt="">
+        </div>
+        <img id="sell-building" src="Images/PixelArt/SellBuilding.png" alt="">
+    
+        <div id="particles"></div>
+
+        <div id="shop-trigger">
+            <p>Enter shop<span>F</span></p>
+            <img src="Images/PixelArt/KeyBackground.png" alt="">
+        </div>
+
+        <div id="minecart-hint" style="z-index: 92;">
+            <p>Sell inventory<span>F</span></p>
+            <img src="Images/PixelArt/KeyBackground.png" alt="">
+        </div>
+    </div>
+
+    <div id="gui">
+        <div id="stats">
+            <div id="storage-stat">
+                <img id="equipped-backpack" src="Images/PixelArt/Backpack.png" alt="">
+                <p id="storage-text">0/50</p>
+            </div>
+            <div id="tool-stat">
+                <img id="equipped-pickaxe" src="Images/PixelArt/SilverPickaxe.png" alt="">
+                <p><img src="Images/PixelArt/MouseLMB.png" alt=""></p>
+
+                <div id="fuel-bar-holder">
+                    <div id="fuel-bar"></div>
+                </div>
+            </div>
+            <div id="depth-stat">
+                <p>Depth:</p>
+                <p id="depth-text">0</p>
+            </div>
+        </div>
+
+        <div id="grappling-hook-info">
+            <img id="grappling-hook-info-img" src="Images/PixelArt/GrapplingHook.png" alt="">
+            <p>F</p>
+            <img id="grappling-hook-info-key-img" src="Images/PixelArt/KeyBackground.png" alt="">
+        </div>
+
+        <div id="lift-stat">
+            <p id="lift-stat-text">Length remaining: 5</p>
+        </div>
+
+        <div id="rescue-hint">
+            <p>Rescue<span>R</span></p>
+            <img src="Images/PixelArt/KeyBackground.png" alt="">
+        </div>
+        <div id="prompt">
+            <h1 id="prompt-header">Rescue to surface?</h1>
+            <p id="prompt-msg">All ores will be lost.</p>
+            <div id="prompt-cancel">
+                <p>Exit<span>E</span></p>
+                <img src="Images/PixelArt/KeyBackground.png" alt="">
+            </div>
+            <div id="prompt-confirm">
+                <p>Confirm<span>Enter</span></p>
+                <img src="Images/PixelArt/KeyBackground.png" alt="">
+            </div>
+        </div>
+
+        <div id="inventory-hint">
+            <p>Inventory<span>E</span></p>
+            <img src="Images/PixelArt/KeyBackground.png" alt="">
+        </div>
+        <div id="inventory">
+            <div id="inv-holder">
+                <h1>Items</h1>
+                <div id="inv-items"></div>
+                <h1 id="inv-content-header">Ores</h1>
+                <div id="inv-content"></div>
+            </div>
+            <div id="inv-interaction">
+                <p>Exit<span>E</span></p>
+                <img src="Images/PixelArt/KeyBackground.png" alt="">
+                <h1 id="inv-item-info"></h1>
+            </div>
+            <div id="inv-interaction2">
+                <p>Place</p>
+                <img src="Images/PixelArt/MouseLMB.png" alt="">
+            </div>
+            <div id="inv-interaction3">
+                <p>Use</p>
+                <img src="Images/PixelArt/MouseLMB.png" alt="">
+            </div>
+            <div id="inv-interaction4">
+                <p>Equip</p>
+                <img src="Images/PixelArt/MouseLMB.png" alt="">
+            </div>
+        </div>
+
+        <div id="sell-data">
+            <div id="sell-data-content"></div>
+            <div id="sell-data-interaction">
+                <p>Exit<span>E</span></p>
+                <img src="Images/PixelArt/KeyBackground.png" alt="">
+            </div>
+        </div>
+
+        <div id="shop">
+            <div class="shop-container" id="shop-shop"></div>
+            <div class="shop-container" id="shop-inv"></div>
+            <h1 class="shop-header" id="header-shop">Shop</h1>
+            <h1 class="shop-header" id="header-inv">Inventory</h1>
+            <h1 class="shop-header" id="header-money"></h1>
+
+            <div id="shop-interaction">
+                <p>Exit<span>E</span></p>
+                <img src="Images/PixelArt/KeyBackground.png" alt="">
+            </div>
+
+            <div id="shop-interaction2">
+                <p>Buy</p>
+                <img src="Images/PixelArt/MouseLMB.png" alt="">
+            </div>
+        </div>
+
+        <div id="ore-info">
+            <img id="ore-info-img" src="Images/PixelArt/AmethystOre.png" alt="">
+            <p id="ore-info-text">Amethyst</p>
+        </div>
+    </div>
+
+    <h1 id="fps" style="position: fixed; right: 10px; top: 10px; color: green; z-index: 1000; -webkit-text-stroke: black 1px;">FPS: 0</h1>
+
+    <h1 id="early-access">Early access - version 1</h1>
+
+    <div id="loading">
+        <h1 id="loading-text">Loading...</h1>
+    </div>
+
+    <script type="module" src="utils/core/string_converter.js"></script>
+    <script type="module" src="utils/core/random.js"></script>
+    <script type="module" src="utils/collision.js"></script>
+    <script type="module" src="utils/particle.js"></script>
+    <script type="module" src="utils/prompt_menu.js"></script>
+    <script type="module" src="utils/ore_alert.js"></script>
+    <script type="module" src="utils/selection_box.js"></script>
+    <script type="module" src="utils/darkness_effect.js"></script>
+
+    <script type="module" src="data/ore_data.js"></script>
+    
+    <script type="module" src="tiles/tile_map.js"></script>
+
+    <script type="module" src="player/backpack.js"></script>
+    <script type="module" src="player/player_data.js"></script>
+
+    <script type="module" src="data/saving_system.js"></script>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

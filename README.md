@@ -1,3 +1,3 @@
 # Controls
 
-Horizontal movement - A, D or LeftArrow, Right Arrow
+Horizontal movement - ** A, D or LeftArrow, Right Arrow

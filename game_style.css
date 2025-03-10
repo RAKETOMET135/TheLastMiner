@@ -73,6 +73,7 @@ PLAYER
     width: 50px;
     height: 50px;
     z-index: 99;
+    pointer-events: none;
 }
 #player-image{
     position: absolute;
@@ -81,6 +82,7 @@ PLAYER
     top: -15%;
     image-rendering: pixelated;
     filter: brightness(1) contrast(1.5);
+    pointer-events: none;
 }
 #player-tool{
     position: absolute;
@@ -91,6 +93,7 @@ PLAYER
     translate: -50% -50%;
     transform-origin: 50% 100%;
     rotate: 75deg;
+    pointer-events: none;
 }
 
 @keyframes tool-swing-right {
@@ -166,6 +169,7 @@ TILES
     top: 0;
     z-index: 4;
     -webkit-user-drag: none;
+    pointer-events: none;
 }
 .damage-image{
     width: 100%;
@@ -192,6 +196,7 @@ TILES
     user-select: none;
     -webkit-user-select: none;
     image-rendering: pixelated;
+    pointer-events: none;
 }
 
 #light-mask{

@@ -2676,6 +2676,7 @@ function setup(){
 
     renderInventoryContent()
 
+    /*
     loadingText.innerText = "Loading"
     setTimeout(() => {
         loadingText.innerText = "Loading ."
@@ -2705,6 +2706,8 @@ function setup(){
             SavingSystem.saveData(gamePlayerStats, darknessEffect, backpack, playerData, mainTileMap)
         }
     }, 5000000)
+    */
+   loading.style.visibility = "hidden"
 
     let bottomBedrockImage = document.createElement("div")
     bottomBedrockImage.style.position = "absolute"

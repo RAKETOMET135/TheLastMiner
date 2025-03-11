@@ -154,11 +154,12 @@ export class PlayerData{
             let tileBottom = tileTop + StringConverter.floatFromPixelString(tileComputedStyle.height)
 
             if (!isGrounded){
-                if (playerBottom >= tileTop && tileCollision && playerTop < tileTop - 20){
+                //if (playerBottom >= tileTop && playerTop < tileTop - 20){
+                if (playerBottom >= tileTop && playerBottom <= tileBottom - 20){
                     if (playerLeft > tileLeft + this._movementDebug && playerLeft < tileRight - this._movementDebug || playerRight > tileLeft + this._movementDebug && playerRight < tileRight - this._movementDebug){
                         isGrounded = true
 
-                        this.setPlayerPosition([position[0], StringConverter.floatFromPixelString(tileComputedStyle.top) - StringConverter.floatFromPixelString(playerElementComputedStyle.height)])
+                        this.setPlayerPosition([position[0], tileTop - StringConverter.floatFromPixelString(playerElementComputedStyle.height)])
                     }
                 }
             }

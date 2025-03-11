@@ -28,7 +28,7 @@ export class SelectionBox{
 
             let tileDistance = diffX + diffY
 
-            if (tileDistance <= 1 && playerData.grounded || tileDistance <= 1 && playerData._inLift || tileDistance <= 1 && playerData._grapplingHook){
+            if (tileDistance <= 1 || tileDistance <= 1 && playerData._inLift || tileDistance <= 1 && playerData._grapplingHook){
                 this.setVisibility(true, this._currentlyHoveredTile, this._currentlyHoveredTileMapCoords)
             }
         }
@@ -46,11 +46,13 @@ export class SelectionBox{
             this.setVisibility(false, this._targetTile, [0, 0])
         }
         else{
+            /*
             if (!playerData.grounded){
                 if (!playerData._inLift && !playerData._grapplingHook){
                     this.setVisibility(false, this._targetTile, [0, 0])
                 }
             }
+            */
         }
     }
 

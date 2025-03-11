@@ -2622,7 +2622,6 @@ function loopHandler(time){
     lastTime = time
 
     mainLoop(deltaTime)
-
     frames++
 
     window.requestAnimationFrame(loopHandler)
